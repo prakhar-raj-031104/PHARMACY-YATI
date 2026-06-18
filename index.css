@@ -4201,9 +4201,8 @@ footer {
     height: 100vh;
     padding: 0 20px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     overflow: hidden;
 }
 
@@ -4221,9 +4220,11 @@ footer {
     will-change: transform;
 }
 .stack-section.stack-ready .stack-card {
-    position: absolute;
+    grid-area: 1 / 1;
     margin: 0;
     height: min(560px, 78vh);
+    align-self: center;
+    justify-self: center;
 }
 .stack-card-text {
     padding: 56px;
