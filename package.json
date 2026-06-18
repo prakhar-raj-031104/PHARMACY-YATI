@@ -1,0 +1,27 @@
+{
+  "name": "yati-pharmaceutical-website",
+  "version": "1.4.0",
+  "description": "Yati Pharmaceutical Pvt Ltd — cinematic corporate product website with a refined teal design system and GSAP-driven interactions.",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    
+    "img:silhouette": "node scripts/check_original_images.js",
+    "img:search": "node scripts/search_all.js"
+  },
+  "keywords": [
+    "pharmaceutical",
+    "healthcare",
+    "landing-page",
+    "gsap",
+    "static-site"
+  ],
+  "author": "Yati Pharmaceutical Pvt Ltd",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "jimp": "^0.22.4"
+  }
+}

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yati Pharmaceuticals</title>
+    <meta name="description" content="Yati Pharmaceuticals Pvt Ltd blends Ayurvedic purity and Allopathic precision in a cinematic product launch website. Explore our certified healthcare formulations.">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css?v=1.4">
+</head>
+<body>
+
+    <!-- Lupin Trailing Background Vector -->
+    <div class="lupin-bg-vector" aria-hidden="true">
+        <svg viewBox="0 0 1440 7000" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1200,0 C600,1000 100,1500 400,2500 C700,3500 1300,4000 900,5000 C600,5800 200,6200 400,6800" stroke="rgba(27, 107, 89, 0.05)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M1180,0 C580,1000 80,1500 380,2500 C680,3500 1280,4000 880,5000 C580,5800 180,6200 380,6800" stroke="rgba(150, 111, 66, 0.04)" stroke-width="2" stroke-dasharray="10 15" stroke-linecap="round"/>
+            
+            <circle cx="950" cy="500" r="15" fill="rgba(14, 140, 119, 0.01)" stroke="rgba(14, 140, 119, 0.04)" stroke-width="1.5"/>
+            <circle cx="850" cy="850" r="8" fill="rgba(150, 111, 66, 0.01)" stroke="rgba(150, 111, 66, 0.04)"/>
+            <g opacity="0.4">
+                <line x1="400" y1="2500" x2="380" y2="2500" stroke="rgba(27, 107, 89, 0.15)"/>
+                <line x1="420" y1="2540" x2="395" y2="2535" stroke="rgba(27, 107, 89, 0.15)"/>
+                <line x1="435" y1="2580" x2="410" y2="2575" stroke="rgba(27, 107, 89, 0.15)"/>
+                <circle cx="400" cy="2500" r="4" fill="var(--gold)"/>
+                <circle cx="380" cy="2500" r="4" fill="var(--lupin-teal)"/>
+            </g>
+            <g opacity="0.3" transform="translate(100, 1200)">
+                <path d="M0,50 L50,80 L100,50 L100,-10 L50,-40 L0,-10 Z" stroke="rgba(27, 107, 89, 0.08)" stroke-width="1.5"/>
+                <circle cx="0" cy="50" r="3" fill="var(--lupin-teal)"/>
+                <circle cx="50" cy="80" r="3" fill="var(--lupin-teal)"/>
+                <circle cx="100" cy="50" r="3" fill="var(--lupin-teal)"/>
+            </g>
+            <g opacity="0.3" transform="translate(1200, 3200)">
+                <path d="M0,50 L50,80 L100,50 L100,-10 L50,-40 L0,-10 Z" stroke="rgba(150, 111, 66, 0.08)" stroke-width="1.5"/>
+                <circle cx="0" cy="50" r="3" fill="var(--gold)"/>
+                <circle cx="50" cy="80" r="3" fill="var(--gold)"/>
+                <circle cx="100" cy="50" r="3" fill="var(--gold)"/>
+            </g>
+            <g opacity="0.3" transform="translate(200, 4800)">
+                <path d="M0,50 L50,80 L100,50 L100,-10 L50,-40 L0,-10 Z" stroke="rgba(27, 107, 89, 0.08)" stroke-width="1.5"/>
+                <circle cx="0" cy="50" r="3" fill="var(--lupin-teal)"/>
+                <circle cx="50" cy="80" r="3" fill="var(--lupin-teal)"/>
+                <circle cx="100" cy="50" r="3" fill="var(--lupin-teal)"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Clean Corporate Header -->
+    <header class="header">
+        <a href="#hero" class="logo-container" style="text-decoration: none;">
+            <div class="logo-brand">
+                <span class="logo-main">Yati<span class="logo-dot">.</span></span>
+                <span class="logo-sub">Pharmaceutical Pvt Ltd</span>
+            </div>
+        </a>
+        
+        <nav class="nav-desktop">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#manufacturing">WHO-GMP</a></li>
+                <li><a href="#research">R&amp;D</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-actions">
+            <button class="icon-btn search-btn" id="search-trigger" aria-label="Search products" type="button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="menu-btn" id="menu-trigger" aria-label="Toggle menu" type="button">
+                <span class="menu-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">Menu</span>
+            </button>
+        </div>
+    </header>
+
+
+
+    <!-- 1. Hero Slider Section -->
+    <section class="hero-slider-section" id="hero">
+        <div class="hero-slider-container">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <img src="processed/hero_slides/slide1.jpg?v=1.3" alt="Yati R&D Lab Innovation">
+                <div class="hero-slide-overlay">
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-subtitle">Yati. Premium Pharmaceuticals</span>
+                        <h2 class="hero-slide-title">Advancing Healthcare <br>Through <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Innovation</span></h2>
+                        <p class="hero-slide-desc">We are committed to developing next-generation therapeutic solutions, sourcing premium molecules, and adhering to strict WHO-GMP certifications.</p>
+                        <div class="hero-slide-actions">
+                            <a href="#products" class="cta-btn cta-primary">Explore Products</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <img src="processed/hero_slides/slide2.jpg?v=1.3" alt="Yati Cleanroom Manufacturing">
+                <div class="hero-slide-overlay">
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-subtitle">State-of-the-Art Facilities</span>
+                        <h2 class="hero-slide-title">Advanced <br>Manufacturing <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Excellence</span></h2>
+                        <p class="hero-slide-desc">Leveraging fully automated cleanrooms and German API synthesis technology to guarantee absolute product stability and safety.</p>
+                        <div class="hero-slide-actions">
+                            <a href="#manufacturing" class="cta-btn cta-primary">WHO-GMP Facility</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Partner With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <img src="processed/hero_slides/slide3.jpg?v=1.3" alt="Yati Scientific Precision">
+                <div class="hero-slide-overlay">
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-subtitle">Purity & Precision</span>
+                        <h2 class="hero-slide-title">Formulated with <br><span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Purpose</span></h2>
+                        <p class="hero-slide-desc">Every batch undergoes rigorous HPLC chromatography analytics and DNA screening to guarantee 100% bio-equivalence assays.</p>
+                        <div class="hero-slide-actions">
+                            <a href="#products" class="cta-btn cta-primary">Therapeutic Portfolio</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Quality Standards</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <img src="processed/hero_slides/slide4.jpg?v=1.3" alt="Yati R&D Testing">
+                <div class="hero-slide-overlay">
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-subtitle">Pioneering Science</span>
+                        <h2 class="hero-slide-title">Molecular <br>Stability <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Modeling</span></h2>
+                        <p class="hero-slide-desc">Utilizing DNA botanical screening and climate chamber modeling to catalogue phyto-chemical compounds for future therapies.</p>
+                        <div class="hero-slide-actions">
+                            <a href="#research" class="cta-btn cta-primary">R&D Capabilities</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <img src="processed/hero_slides/slide5.jpg?v=1.3" alt="Yati Global Access">
+                <div class="hero-slide-overlay">
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-subtitle">Global Footprint</span>
+                        <h2 class="hero-slide-title">Accessible <br>Healthcare <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Globally</span></h2>
+                        <p class="hero-slide-desc">Expanding access to certified healthcare formulations inside established and emerging international trade markets.</p>
+                        <div class="hero-slide-actions">
+                            <a href="#global" class="cta-btn cta-primary">Global Presence</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Export Markets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Nav Buttons -->
+            <button class="hero-slider-btn hero-slider-prev" id="hero-slider-prev" aria-label="Previous Slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="hero-slider-btn hero-slider-next" id="hero-slider-next" aria-label="Next Slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Slider Indicators -->
+            <div class="hero-slider-dots" id="hero-slider-dots">
+                <span class="hero-dot active" data-slide="0"></span>
+                <span class="hero-dot" data-slide="1"></span>
+                <span class="hero-dot" data-slide="2"></span>
+                <span class="hero-dot" data-slide="3"></span>
+                <span class="hero-dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section class="about-section" id="about">
+        <!-- Organic Lightbulb Vector Overlay -->
+        <div class="flower-vector-overlay" style="position: absolute; left: 5%; top: 5%; width: 280px; height: 280px; opacity: 0.15; pointer-events: none;">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Lightbulb Outline -->
+                <path d="M50 15 A22 22 0 0 1 72 37 C72 48 64 54 60 60 A8 8 0 0 0 57 66 L57 74 A7 7 0 0 1 50 81 A7 7 0 0 1 43 74 L43 66 A8 8 0 0 0 40 60 C36 54 28 48 28 37 A22 22 0 0 1 50 15 Z" />
+                <!-- Screw base details -->
+                <line x1="43" y1="70" x2="57" y2="70" stroke="#ffffff" />
+                <line x1="45" y1="74" x2="55" y2="74" stroke="#ffffff" />
+                <!-- Organic leaf growing inside -->
+                <path d="M50 64 C50 64 53 53 50 45 C47 37 50 28 50 28 C50 28 53 37 50 45" stroke="#ffffff" stroke-width="1.5" />
+                <path d="M50 48 C50 48 54 46 56 42 C58 38 55 35 55 35 C55 35 51 38 50 45" stroke="#ffffff" stroke-width="1.2" fill="none" />
+                <path d="M50 54 C50 54 45 52 42 49 C39 46 43 43 43 43 C43 43 47 46 50 51" stroke="#ffffff" stroke-width="1.2" fill="none" />
+            </svg>
+        </div>
+        
+        <div class="about-container">
+            <div class="about-text reveal">
+                <span class="hero-subtitle">Our Purpose</span>
+                <h3>Formulated with <span class="highlight-serif-italic" style="color: #ffffff !important;">Purpose</span>, Driven by <span class="highlight-serif-italic" style="color: #ffffff !important;">Science</span></h3>
+                <p>Yati Pharmaceutical Pvt Ltd is a purpose-driven corporate healthcare brand. We specialize in researching, formulating, and distributing high-efficiency allopathic and nutraceutical products designed to address global clinical requirements.</p>
+                <p>Our commitment rests on strict regulatory guidelines, authenticated clinical verification, and high-purity molecule extraction. We provide healthcare professionals, distributors, and partners with scalable therapeutic formulations that meet absolute safety, stability, and efficacy benchmarks.</p>
+                
+                <div style="margin-top: 30px; border-left: 3px solid #ffffff; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <p style="font-size: 14px; font-style: italic; color: #ffffff !important;">"Our mission is to bridge molecular innovation and manufacturing excellence, delivering global standards of medicine to patients worldwide."</p>
+                    <span style="font-size: 12px; font-weight: 700; color: #ffffff;">— Executive Committee</span>
+                </div>
+            </div>
+            
+            <div class="about-cards-grid reveal stagger-2">
+                <!-- 1. WHO-GMP Certified (Leaf Card) -->
+                <div class="leaf-card-wrapper">
+                    <div class="leaf-card">
+                        <div class="leaf-card-content">
+                            <i class="fa-solid fa-award"></i>
+                            <h4>WHO-GMP Certified</h4>
+                            <p>Operating under rigorous global manufacturing hygiene protocols.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2. Quality Assurance (Leaf Card) -->
+                <div class="leaf-card-wrapper">
+                    <div class="leaf-card">
+                        <div class="leaf-card-content">
+                            <i class="fa-solid fa-shield-check"></i>
+                            <h4>Quality Assurance</h4>
+                            <p>100% bio-equivalence assays and safety testing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3. Innovation Driven (Leaf Card) -->
+                <div class="leaf-card-wrapper">
+                    <div class="leaf-card">
+                        <div class="leaf-card-content">
+                            <i class="fa-solid fa-microscope"></i>
+                            <h4>Innovation Driven</h4>
+                            <p>Active R&D pipelines for molecular formulations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5 Why Choose Yati Section -->
+    <section class="why-section" id="why-choose">
+        <span class="hero-subtitle reveal" style="text-align: center; display: block; margin-bottom: 15px;">Why Choose Yati</span>
+        <h3 class="reveal stagger-1" style="text-align: center;">Commitment to <span class="highlight-serif-italic">Healthcare</span> Excellence</h3>
+        
+        <div class="why-grid reveal stagger-2">
+            <!-- 1. Advanced Manufacturing -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-industry"></i></div>
+                <h4>Advanced Manufacturing</h4>
+                <p>Fully automated cleanrooms and API synthesis utilizing advanced German and Italian machinery to guarantee optimal product integrity.</p>
+            </div>
+            
+            <!-- 2. Research & Development -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-microscope"></i></div>
+                <h4>Research & Development</h4>
+                <p>Equipped with molecular stability chambers and DNA verification tools to design high-bioavailability formulations.</p>
+            </div>
+            
+            <!-- 3. Global Quality Standards -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Global Quality Standards</h4>
+                <p>Absolute alignment with WHO-GMP, ISO 9001:2015, and FSSAI standards. Every batch undergoes extensive HPLC analytics.</p>
+            </div>
+            
+            <!-- 4. Customer Commitment -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h4>Customer Commitment</h4>
+                <p>Supporting our global distributors, wholesale buyers, and medical representatives with round-the-clock logistics and product support.</p>
+            </div>
+            
+            <!-- 5. Regulatory Compliance -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-file-shield"></i></div>
+                <h4>Regulatory Compliance</h4>
+                <p>Smooth, transparent paperwork, dossier preparations, and licensing protocols matching international drug regulatory authorities.</p>
+            </div>
+            
+            <!-- 6. Expert Team -->
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                <h4>Expert Team</h4>
+                <p>Led by veteran pharmaceutical scientists, quality analysts, chemical engineers, and clinical experts dedicated to therapeutic purity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Products Showcase Section -->
+    <section class="products-section" id="products">
+        <!-- Floating decorative molecules/pills -->
+        <svg class="floating-deco float-slow float-reverse" style="top: 35%; left: 4%; width: 35px; height: 35px; stroke: var(--sky-blue); stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="var(--sky-blue)"/><circle cx="4" cy="5" r="2" fill="var(--sky-blue)"/><circle cx="20" cy="5" r="2" fill="var(--sky-blue)"/><circle cx="20" cy="19" r="2" fill="var(--sky-blue)"/><line x1="12" y1="12" x2="4" y2="5" /><line x1="12" y1="12" x2="20" y2="5" /><line x1="12" y1="12" x2="20" y2="19" /></svg>
+        <svg class="floating-deco float-slow" style="bottom: 25%; right: 6%; width: 30px; height: 30px; fill: var(--emerald-green);" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v12a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4zm-2 4a2 2 0 0 1 4 0v5h-4V6zm4 12a2 2 0 0 1-4 0v-5h4v5z"/></svg>
+
+        <span class="hero-subtitle reveal" style="text-align: center; display: block; margin-bottom: 15px;">Diverse Therapeutic Portfolio</span>
+        <h3 class="reveal stagger-1">Our Product <span class="highlight-serif-italic">Categories</span></h3>
+        
+        <div class="category-grid reveal stagger-2">
+            <!-- 1. Tablets -->
+            <div class="category-card" onclick="openCategoryModal('Tablets')">
+                <div class="category-card-visual">
+                    <img src="processed/transparent/medicine_box_front.png" alt="Yati Tablets Range">
+                </div>
+                <div class="category-card-info">
+                    <span class="category-card-title">Tablets</span>
+                    <p class="category-card-desc">Advanced solid oral dosage forms including dispersible, sustained-release, and film-coated formulations manufactured under sterile conditions.</p>
+                    <button class="category-card-btn">Explore Range</button>
+                </div>
+            </div>
+            
+            <!-- 2. Capsules -->
+            <div class="category-card" onclick="openCategoryModal('Capsules')">
+                <div class="category-card-visual">
+                    <img src="processed/transparent/WhatsApp Image 2026-06-15 at 11.35.18 AM (2).png" alt="Yati Capsules Range">
+                </div>
+                <div class="category-card-info">
+                    <span class="category-card-title">Capsules</span>
+                    <p class="category-card-desc">Premium soft gelatin and hard-shell capsules containing oil-based mixtures and standardized herbal extracts for maximum absorption.</p>
+                    <button class="category-card-btn">Explore Range</button>
+                </div>
+            </div>
+            
+            <!-- 3. Syrups -->
+            <div class="category-card" onclick="openCategoryModal('Syrups')">
+                <div class="category-card-visual">
+                    <img src="processed/transparent/syrup_bottle_front.png?v=1.2" alt="Yati Syrups Range">
+                </div>
+                <div class="category-card-info">
+                    <span class="category-card-title">Syrups</span>
+                    <p class="category-card-desc">High-bioavailability liquid oral suspensions and syrups, including sugar-free expectorants, digestive enzymes, and uterine health tonics.</p>
+                    <button class="category-card-btn">Explore Range</button>
+                </div>
+            </div>
+            
+            <!-- 4. Injectables -->
+            <div class="category-card" onclick="openCategoryModal('Injectables')">
+                <div class="category-card-visual">
+                    <img src="processed/transparent/WhatsApp Image 2026-06-15 at 11.35.38 AM (1).png" alt="Yati Injectables Range">
+                </div>
+                <div class="category-card-info">
+                    <span class="category-card-title">Injectables</span>
+                    <p class="category-card-desc">Sterile, pyrogen-free dry powder and liquid injections prepared in Class 100 sterile environments, serving acute healthcare needs.</p>
+                    <button class="category-card-btn">Explore Range</button>
+                </div>
+            </div>
+            
+            <!-- 5. Nutraceuticals -->
+            <div class="category-card" onclick="openCategoryModal('Nutraceuticals')">
+                <div class="category-card-visual">
+                    <img src="processed/transparent/WhatsApp Image 2026-06-15 at 11.35.22 AM (1).png" alt="Yati Nutraceuticals Range">
+                </div>
+                <div class="category-card-info">
+                    <span class="category-card-title">Nutraceuticals</span>
+                    <p class="category-card-desc">Daily wellness supplements, multi-minerals, herbal oils, and personal hygiene liquids formulated to support preventative health.</p>
+                    <button class="category-card-btn">Explore Range</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Featured Product Section (Apple-like Cinematic presentation) -->
+    <section class="featured-experience-section" id="featured">
+        <!-- Floating organic elements -->
+        <svg class="floating-deco float-slow" style="top: 25%; left: 8%; width: 40px; height: 40px; fill: var(--green);" viewBox="0 0 24 24"><path d="M17,2C17,2 9,3 5,9C1,15 2,22 2,22C2,22 9,23 15,19C21,15 22,7 22,7C22,7 19,2 17,2M15,17C10.5,20 5.2,19.2 5.2,19.2C5.2,19.2 4.4,13.8 7.4,9.4C10.4,5 15,4.2 15,4.2C15,4.2 15.8,10.5 12.8,14.9C11.3,17.1 12.8,14.9 15,17Z"/></svg>
+        <svg class="floating-deco float-slow float-reverse" style="bottom: 20%; right: 10%; width: 25px; height: 35px; fill: var(--cyan);" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+
+        <div class="featured-capsule-target" style="position: absolute; top: 15%; left: 15%; width: 40px; height: 40px; pointer-events: none;"></div>
+        <div class="featured-visual-wrapper reveal">
+            <div class="featured-glow-aura"></div>
+            <div class="featured-podium-showcase">
+                <!-- Floating Clouds (SVG) -->
+                <div class="cloud cloud-1">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                    </svg>
+                </div>
+                <div class="cloud cloud-2">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                    </svg>
+                </div>
+                <div class="cloud cloud-3">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                    </svg>
+                </div>
+
+                <!-- Secondary Background Podium (Coral) -->
+                <div class="featured-podium secondary-podium">
+                    <div class="podium-shadow"></div>
+                    <div class="podium-cylinder podium-coral"></div>
+                    <div class="podium-product-wrapper">
+                        <img src="processed/transparent/cledex_at_box.png" alt="Cledex-AT Packaging" class="podium-product-img">
+                    </div>
+                </div>
+
+                <!-- Primary Foreground Podium (Cyan) -->
+                <div class="featured-podium primary-podium">
+                    <div class="podium-shadow"></div>
+                    <div class="podium-cylinder podium-cyan"></div>
+                    <div class="podium-product-wrapper">
+                        <img src="processed/transparent/cledex_at_bottle.png?v=1.2" alt="Cledex-AT Bottle" class="podium-product-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="featured-details-wrapper reveal stagger-1">
+            <span class="hero-subtitle">Specialty and Innovation</span>
+            <h3>Cledex-AT <span class="highlight-serif-italic">Expectorant</span></h3>
+            <p>A flagship formulation in respiratory therapy. Engineered as a triple-action mucolytic expectorant, Cledex-AT thins bronchial secretions, opens respiratory airways, and facilitates easy chest clearance.</p>
+            <div class="feature-cards-grid">
+                <div class="feature-spec-card">
+                    <h5>Ambroxol HCl</h5>
+                    <p>Acts as an advanced mucolytic agent, dissolving thick phlegm bonds to clear pathways.</p>
+                </div>
+                <div class="feature-spec-card">
+                    <h5>Terbutaline</h5>
+                    <p>Relaxes the bronchial muscles, relieving wheezing and opening airways for smooth respiration.</p>
+                </div>
+                <div class="feature-spec-card">
+                    <h5>Guaiphenesin</h5>
+                    <p>An effective expectorant that increases lubrication and facilitates mucus elimination.</p>
+                </div>
+                <div class="feature-spec-card">
+                    <h5>Natural Menthol</h5>
+                    <p>Soothes throat irritation instantly, providing a cooling, comfortable sensation.</p>
+                </div>
+            </div>
+            <div class="btn-container" style="justify-content: flex-start; margin-top: 20px;">
+                <button class="cta-btn cta-primary" onclick="openFeaturedModal(9)">Full Specifications</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Manufacturing Excellence Section (Horizontal scroll timeline) -->
+    <section class="manufacturing-section" id="manufacturing">
+        <div class="manufacturing-sticky-container">
+            <!-- Floating molecule -->
+            <svg class="floating-deco float-slow" style="top: 15%; right: 12%; width: 35px; height: 35px; stroke: var(--medical-blue); stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="var(--medical-blue)"/><circle cx="4" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="19" r="2" fill="var(--medical-blue)"/><line x1="12" y1="12" x2="4" y2="5" /><line x1="12" y1="12" x2="20" y2="5" /><line x1="12" y1="12" x2="20" y2="19" /></svg>
+
+            <span class="hero-subtitle reveal" style="text-align: center;">Global Technical Operations</span>
+            <h3 class="reveal stagger-1">Manufacturing <span class="highlight-serif-italic">Excellence</span></h3>
+            <p class="section-sub reveal stagger-2">Leveraging automated API synthesis, molecular assays, and modern formulation tracks inside certified cleanrooms.</p>
+            
+            <div class="timeline-pathway">
+                <div class="timeline-pathway-fill" id="timeline-fill"></div>
+            </div>
+
+            <div class="timeline-horizontal-wrapper" id="timeline-wrapper">
+                <div class="timeline-panel">
+                    <div class="panel-num">01</div>
+                    <h4>Raw Materials</h4>
+                    <p>Sourcing authenticated botanical herbs and pure chemical APIs under strict quality verification protocols.</p>
+                </div>
+                <div class="timeline-panel">
+                    <div class="panel-num">02</div>
+                    <h4>Research</h4>
+                    <p>Conducting botanical screening, DNA verification, and bio-equivalence tests to optimize molecule potency.</p>
+                </div>
+                <div class="timeline-panel">
+                    <div class="panel-num">03</div>
+                    <h4>Production</h4>
+                    <p>Blending, mixing, and formulating inside Class 10,000 cleanrooms under sterile air HEPA filtration systems.</p>
+                </div>
+                <div class="timeline-panel">
+                    <div class="panel-num">04</div>
+                    <h4>Quality Control</h4>
+                    <p>Rigorous HPLC assays, climate-chamber stability trials, and chemical verification of active pharmaceutical elements.</p>
+                </div>
+                <div class="timeline-panel">
+                    <div class="panel-num">05</div>
+                    <h4>Packaging</h4>
+                    <p>High-speed laser-guided automated filling and bottling lines to secure absolute product shelf-life and hygiene.</p>
+                </div>
+                <div class="timeline-panel">
+                    <div class="panel-num">06</div>
+                    <h4>Distribution</h4>
+                    <p>Secure cold-chain logistics and audited export management pathways supplying markets and healthcare networks globally.</p>
+                </div>
+            </div>
+            <div class="manufacturing-capsule-target" style="height: 1px;"></div>
+        </div>
+    </section>
+
+    <!-- 6. Research & Development Section -->
+    <section class="research-section" id="research">
+        <!-- Floating organic elements -->
+        <svg class="floating-deco float-slow" style="top: 10%; left: 15%; width: 35px; height: 35px; fill: var(--sky-blue);" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v12a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4zm-2 4a2 2 0 0 1 4 0v5h-4V6zm4 12a2 2 0 0 1-4 0v-5h4v5z"/></svg>
+        <svg class="floating-deco float-slow float-reverse" style="bottom: 12%; right: 8%; width: 45px; height: 45px; stroke: var(--medical-blue); stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="var(--medical-blue)"/><circle cx="4" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="19" r="2" fill="var(--medical-blue)"/><line x1="12" y1="12" x2="4" y2="5" /><line x1="12" y1="12" x2="20" y2="5" /><line x1="12" y1="12" x2="20" y2="19" /></svg>
+
+        <span class="hero-subtitle reveal" style="text-align: center; color: var(--sky-blue);">Pioneering Science</span>
+        <h3 class="reveal stagger-1">Research & <span class="highlight-serif-italic">Innovation</span></h3>
+        
+        <div class="research-interactive-grid">
+            <div class="innovation-sphere-wrapper reveal stagger-2">
+                <div class="innovation-sphere">
+                    <img src="rd_innovation.jpg" alt="Molecular Research" class="sphere-image">
+                </div>
+            </div>
+            <div class="research-cards-grid">
+                <div class="research-info-card reveal stagger-1">
+                    <i class="fa-solid fa-microscope"></i>
+                    <h4>DNA Identification</h4>
+                    <p>Genetic screening verifies botanical species, securing uniform therapeutic results in every batch.</p>
+                </div>
+                <div class="research-info-card reveal stagger-2">
+                    <i class="fa-solid fa-disease"></i>
+                    <h4>Synergistic Biology</h4>
+                    <p>Developing drug structures where multiple natural agents enhance efficacy and reduce toxic side effects.</p>
+                </div>
+                <div class="research-info-card reveal stagger-3">
+                    <i class="fa-solid fa-shield-virus"></i>
+                    <h4>Stability Modeling</h4>
+                    <p>Testing products in climate chambers to guarantee quality and integrity across global climates.</p>
+                </div>
+                <div class="research-info-card reveal stagger-4">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h4>Phyto-Chemical Library</h4>
+                    <p>Cataloging molecules from over 400 Indian herbs to pioneer future therapeutic supplements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Quality Standards Section -->
+    <section class="quality-section" id="quality">
+        <span class="hero-subtitle reveal" style="text-align: center;">Ethics, Quality & Governance</span>
+        <h3 class="reveal stagger-1">Certifications & <span class="highlight-serif-italic">Compliance</span></h3>
+        <div class="certification-grid">
+            <div class="cert-card reveal stagger-1">
+                <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                <h4>WHO-GMP</h4>
+                <p>Adhering to strict international World Health Organization Good Manufacturing Practices for complete control.</p>
+            </div>
+            <div class="cert-card reveal stagger-2">
+                <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>ISO 9001:2015</h4>
+                <p>Rigorous Quality Management System auditing to ensure product consistency, safety, and continuous enhancement.</p>
+            </div>
+            <div class="cert-card reveal stagger-3">
+                <div class="cert-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                <h4>GLP Laboratory</h4>
+                <p>Equipped with state-of-the-art instruments for raw material verification and final product assays.</p>
+            </div>
+            <div class="cert-card reveal stagger-4">
+                <div class="cert-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h4>FSSAI Standard</h4>
+                <p>Fully certified food safety management compliance for all nutritional and nutraceutical lines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Global Presence Section -->
+    <section class="global-section" id="global">
+        <!-- Flower Vector Background Outline -->
+        <div class="flower-vector-overlay" style="position: absolute; left: 10%; bottom: -50px; width: 450px; height: 450px; opacity: 0.08;">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <path id="global-petal" d="M 100 100 C 70 60, 70 20, 100 20 C 130 20, 130 60, 100 100 Z" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.2" />
+                </defs>
+                <g>
+                    <use href="#global-petal" transform="rotate(0 100 100)" />
+                    <use href="#global-petal" transform="rotate(60 100 100)" />
+                    <use href="#global-petal" transform="rotate(120 100 100)" />
+                    <use href="#global-petal" transform="rotate(180 100 100)" />
+                    <use href="#global-petal" transform="rotate(240 100 100)" />
+                    <use href="#global-petal" transform="rotate(300 100 100)" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="global-section-container">
+            <span class="hero-subtitle reveal" style="text-align: center; color: var(--lupin-green-lime) !important;">Global Footprint</span>
+            <h3 class="reveal stagger-1">Global <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Presence</span></h3>
+            <p class="section-sub reveal stagger-2">Expanding access to high-quality healthcare formulations in established and emerging global markets.</p>
+            
+            <div class="global-content-wrapper">
+                <div class="world-map-wrapper reveal stagger-3">
+                    <img src="global_map.jpg" alt="Yati Global Export Map" class="global-map-image">
+                    <!-- Glowing Node Hubs -->
+                    <div class="glowing-node node-1"></div>
+                    <div class="glowing-node node-2"></div>
+                    <div class="glowing-node node-3"></div>
+                    <div class="glowing-node node-4"></div>
+                </div>
+                
+                <div class="global-stats-grid">
+                    <div class="stat-item reveal stagger-1">
+                        <div class="stat-num" data-val="12">0</div>
+                        <div class="stat-label">Export Countries</div>
+                    </div>
+                    <div class="stat-item reveal stagger-2">
+                        <div class="stat-num" data-val="70">0</div>
+                        <div class="stat-label">Products Active</div>
+                    </div>
+                    <div class="stat-item reveal stagger-3">
+                        <div class="stat-num" data-val="1500">0</div>
+                        <div class="stat-label">Distributors</div>
+                    </div>
+                    <div class="stat-item reveal stagger-4">
+                        <div class="stat-num" data-val="5">0</div>
+                        <div class="stat-label">Mil. Patients Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8.5 Our Business Section -->
+    <section class="our-business-section" id="business">
+        <div class="our-business-container">
+            <div class="our-business-text reveal">
+                <span class="hero-subtitle" style="color: var(--lupin-green-lime) !important;">Diverse Verticals</span>
+                <h3 style="color: #ffffff !important; font-size: 40px; margin-bottom: 20px;">Our <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Business</span></h3>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 16px; margin-bottom: 24px;">Yati Pharmaceutical Pvt Ltd operates a highly diversified corporate healthcare portfolio. Our operations span sterile generics, complex formulations, custom API synthesis, and premium preventative nutraceuticals. We are supported by robust research pipelines and advanced WHO-GMP certified technical facilities.</p>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 16px; margin-bottom: 30px;">With a strategic patient-centric focus, we serve major healthcare systems, government hospital networks, global wholesale distributors, and retail pharmacies across international trade corridors.</p>
+                <div class="btn-container">
+                    <a href="#products" class="cta-btn cta-primary">Explore Formulations</a>
+                </div>
+            </div>
+            <div class="our-business-visual reveal stagger-2">
+                <div class="circular-frame-wrapper">
+                    <img src="about_showcase.jpg" alt="Yati Pharmaceutical Technical Operations">
+                </div>
+            </div>
+    </section>
+
+    <!-- 8.6 Business Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <span class="hero-subtitle reveal" style="text-align: center; display: block; margin-bottom: 15px; color: var(--lupin-green-lime) !important;">Media & Facilities</span>
+        <h3 class="reveal stagger-1" style="text-align: center; color: #ffffff !important; font-size: 40px; margin-bottom: 30px;">Business <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Gallery</span></h3>
+        
+        <!-- Interactive Category Filters -->
+        <div class="gallery-filters reveal stagger-2">
+            <button class="gallery-filter-btn active" data-filter="all">All Facilities</button>
+            <button class="gallery-filter-btn" data-filter="manufacturing">Manufacturing</button>
+            <button class="gallery-filter-btn" data-filter="quality">Quality Assurance</button>
+            <button class="gallery-filter-btn" data-filter="operations">Operations</button>
+        </div>
+
+        <!-- Collage Grid of 19 Images -->
+        <div class="gallery-grid reveal stagger-3">
+            <!-- 1. Automated API Synthesis Platform -->
+            <div class="gallery-item grid-wide" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.43 AM.jpeg" alt="Automated API Synthesis Platform">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Automated API Synthesis Platform</h4>
+                </div>
+            </div>
+
+            <!-- 2. Class 10,000 Sterile Cleanroom -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.44 AM.jpeg" alt="Class 10,000 Sterile Cleanroom">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Class 10,000 Sterile Cleanroom</h4>
+                </div>
+            </div>
+
+            <!-- 3. Molecular Biology Testing Suite -->
+            <div class="gallery-item" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.45 AM (1).jpeg" alt="Molecular Biology Testing Suite">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">Molecular Biology Testing Suite</h4>
+                </div>
+            </div>
+
+            <!-- 4. HPLC Chemical Assay Analyzer -->
+            <div class="gallery-item grid-tall" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.45 AM.jpeg" alt="HPLC Chemical Assay Analyzer">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">HPLC Chemical Assay Analyzer</h4>
+                </div>
+            </div>
+
+            <!-- 5. High-Speed Bottle Filling Line -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.46 AM (1).jpeg" alt="High-Speed Bottle Filling Line">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">High-Speed Bottle Filling Line</h4>
+                </div>
+            </div>
+
+            <!-- 6. Laser-Guided Cartoning System -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.46 AM.jpeg" alt="Laser-Guided Cartoning System">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Laser-Guided Cartoning System</h4>
+                </div>
+            </div>
+
+            <!-- 7. Stability Testing Chambers -->
+            <div class="gallery-item grid-large" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.47 AM (1).jpeg" alt="Stability Testing Chambers">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">Stability Testing Chambers</h4>
+                </div>
+            </div>
+
+            <!-- 8. Raw Material Micro-Assay Lab -->
+            <div class="gallery-item" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.47 AM (2).jpeg" alt="Raw Material Micro-Assay Lab">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">Raw Material Micro-Assay Lab</h4>
+                </div>
+            </div>
+
+            <!-- 9. Liquid Suspension Blending Vessel -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.47 AM.jpeg" alt="Liquid Suspension Blending Vessel">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Liquid Suspension Blending Vessel</h4>
+                </div>
+            </div>
+
+            <!-- 10. HEPA Air Filtration Control Center -->
+            <div class="gallery-item grid-wide" data-category="operations">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.48 AM (1).jpeg" alt="HEPA Air Filtration Control Center">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Operations</span>
+                    <h4 class="gallery-item-title">HEPA Air Filtration Control</h4>
+                </div>
+            </div>
+
+            <!-- 11. Standardized Packaging Inspection -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.48 AM.jpeg" alt="Standardized Packaging Inspection">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Packaging Inspection</h4>
+                </div>
+            </div>
+
+            <!-- 12. DNA Verification Assays -->
+            <div class="gallery-item" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.50 AM (2).jpeg" alt="DNA Verification Assays">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">DNA Verification Assays</h4>
+                </div>
+            </div>
+
+            <!-- 13. API Chemical Synthesis Lab -->
+            <div class="gallery-item grid-tall" data-category="quality">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.51 AM (1).jpeg" alt="API Chemical Synthesis Lab">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Quality Assurance</span>
+                    <h4 class="gallery-item-title">API Chemical Synthesis Lab</h4>
+                </div>
+            </div>
+
+            <!-- 14. Cold-Chain Logistics Terminal -->
+            <div class="gallery-item" data-category="operations">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.52 AM (2).jpeg" alt="Cold-Chain Logistics Terminal">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Operations</span>
+                    <h4 class="gallery-item-title">Cold-Chain Logistics Terminal</h4>
+                </div>
+            </div>
+
+            <!-- 15. Water Purification Plant (WFI) -->
+            <div class="gallery-item" data-category="operations">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.52 AM.jpeg" alt="Water Purification Plant (WFI)">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Operations</span>
+                    <h4 class="gallery-item-title">Water Purification Plant (WFI)</h4>
+                </div>
+            </div>
+
+            <!-- 16. Active Molecule Extraction Units -->
+            <div class="gallery-item grid-wide" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.53 AM (1).jpeg" alt="Active Molecule Extraction Units">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Active Molecule Extraction</h4>
+                </div>
+            </div>
+
+            <!-- 17. High-Capacity Tablet Compression -->
+            <div class="gallery-item" data-category="manufacturing">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.53 AM (2).jpeg" alt="High-Capacity Tablet Compression">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Manufacturing</span>
+                    <h4 class="gallery-item-title">Tablet Compression Facility</h4>
+                </div>
+            </div>
+
+            <!-- 18. GMP Compliance Training Suite -->
+            <div class="gallery-item" data-category="operations">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.53 AM.jpeg" alt="GMP Compliance Training Suite">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Operations</span>
+                    <h4 class="gallery-item-title">GMP Compliance Suite</h4>
+                </div>
+            </div>
+
+            <!-- 19. Finished Goods Distribution Hub -->
+            <div class="gallery-item" data-category="operations">
+                <img src="gallery/WhatsApp Image 2026-06-16 at 11.59.54 AM.jpeg" alt="Finished Goods Distribution Hub">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-tag">Operations</span>
+                    <h4 class="gallery-item-title">Finished Goods Distribution</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. News & Updates Section -->
+    <section class="news-section" id="testimonials">
+        <span class="hero-subtitle reveal" style="text-align: center; display: block; margin-bottom: 15px;">Corporate Desk & Insights</span>
+        <h3 class="reveal stagger-1" style="text-align: center;">News & <span class="highlight-serif-italic">Updates</span></h3>
+        
+        <div class="news-grid reveal stagger-2">
+            <!-- News Card 1: Company News -->
+            <div class="news-card">
+                <span class="news-category tag-company">Company News</span>
+                <h4>Indore Export Facility Clears Annual Audits</h4>
+                <p>Our principal manufacturing facility has reported a 20% increase in capacity after successfully passing all regional WHO-GMP inspections.</p>
+                <div class="news-footer">
+                    <span>June 12, 2026</span>
+                    <a href="#contact" class="news-readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News Card 2: Product Launches -->
+            <div class="news-card">
+                <span class="news-category tag-launch">Product Launches</span>
+                <h4>Formulation Approval for Sterile Yaticef-1g Injectable</h4>
+                <p>We are pleased to introduce our new dry-powder Ceftriaxone injection, prepared in Class 100 sterile environments for healthcare distribution.</p>
+                <div class="news-footer">
+                    <span>May 28, 2026</span>
+                    <a href="#contact" class="news-readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News Card 3: Industry Updates -->
+            <div class="news-card">
+                <span class="news-category tag-industry">Industry Updates</span>
+                <h4>Trends in Molecular Standardization</h4>
+                <p>New scientific studies review how DNA botanical screening and stability chambers secure batch efficacy standards across global trade routes.</p>
+                <div class="news-footer">
+                    <span>April 15, 2026</span>
+                    <a href="#contact" class="news-readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- News Card 4: Events -->
+            <div class="news-card">
+                <span class="news-category tag-event">Events</span>
+                <h4>Yati at the South-Asian Trade Summit</h4>
+                <p>Announcing strategic distribution alliances and new wholesale partnerships at the annual regional pharmaceutical developer summit.</p>
+                <div class="news-footer">
+                    <span>March 10, 2026</span>
+                    <a href="#contact" class="news-readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9.5 Leadership Section -->
+    <section class="leadership-section" id="leadership">
+        <div class="leadership-section-container">
+            <span class="hero-subtitle reveal" style="text-align: center; display: block; margin-bottom: 15px; color: var(--lupin-green-lime) !important;">Governing Board</span>
+            <h3 class="reveal stagger-1" style="text-align: center; color: #ffffff !important;">Our Executive <span class="highlight-serif-italic" style="color: var(--lupin-green-lime) !important;">Leadership</span></h3>
+            
+            <div class="leadership-container">
+                <!-- Chairman Message -->
+                <div class="chairman-card reveal">
+                    <div class="chairman-quote-box">
+                        <span class="quote-mark">“</span>
+                        <p>For over two decades, Yati has stood for therapeutic safety and absolute customer commitment. Our focus on quality and international standard compliance drives us to reach more markets globally, providing patient-centric products that support healthcare excellence.</p>
+                        <div style="margin-top: 20px;">
+                            <h5>Mr. Suresh Chandra Gupta</h5>
+                            <span style="color: var(--lupin-green-lime) !important; font-size: 13px; font-weight: 600;">Chairman & Founder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Managing Director / Executives Grid -->
+                <div class="executives-grid reveal stagger-2">
+                    <div class="executive-card">
+                        <div class="exec-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h4>Dr. Amit Gupta</h4>
+                            <span>Managing Director & Head of R&D</span>
+                            <p>Spearheading botanical screening, molecular stability modeling, and international trade alliances.</p>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h4>Mrs. Rashmi Gupta</h4>
+                            <span>Director of Quality & Compliance</span>
+                            <p>Overseeing WHO-GMP facilities, ISO certification audits, and local regulatory filings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Careers Section -->
+    <section class="careers-section" id="careers">
+        <div class="careers-content reveal">
+            <span class="hero-subtitle">Work with us</span>
+            <h3>Life at <span class="highlight-serif-italic">Yati</span></h3>
+            <p>Join a team dedicated to scientific rigor and therapeutic safety. At Yati, we foster a culture of collaborative curiosity, personal growth, and manufacturing excellence.</p>
+            
+            <div class="careers-benefits-grid" style="margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--medical-blue); font-size: 20px; margin-top: 3px;"></i>
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 700; color: var(--primary-navy);">Growth Opportunities</h5>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.4;">Structured training, clinical study sponsorships, and executive leadership pathways.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                    <i class="fa-solid fa-heart-pulse" style="color: var(--emerald-green); font-size: 20px; margin-top: 3px;"></i>
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 700; color: var(--primary-navy);">Comprehensive Benefits</h5>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.4;">Premium family health cover, performance bonuses, and dynamic working environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="careers-jobs reveal stagger-2" style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+            <h4 style="font-size: 18px; font-weight: 700; color: var(--primary-navy); margin-bottom: 5px;">Active Openings</h4>
+            
+            <!-- Job Card 1 -->
+            <div class="job-card" style="background: var(--bg-white); border: 1px solid var(--lupin-border); border-radius: var(--radius-md); padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); box-shadow: var(--clay-shadow);">
+                <div>
+                    <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">R&D Formulation Scientist</h5>
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>Indore, MP | 3-5 Yrs Exp</span>
+                </div>
+                <a href="#contact" class="category-card-btn" style="padding: 8px 18px; font-size: 11px; text-decoration: none;">Apply Now</a>
+            </div>
+            
+            <!-- Job Card 2 -->
+            <div class="job-card" style="background: var(--bg-white); border: 1px solid var(--lupin-border); border-radius: var(--radius-md); padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); box-shadow: var(--clay-shadow);">
+                <div>
+                    <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">Quality Assurance Executive</h5>
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>Indore, MP | 2-4 Yrs Exp</span>
+                </div>
+                <a href="#contact" class="category-card-btn" style="padding: 8px 18px; font-size: 11px; text-decoration: none;">Apply Now</a>
+            </div>
+            
+            <!-- Job Card 3 -->
+            <div class="job-card" style="background: var(--bg-white); border: 1px solid var(--lupin-border); border-radius: var(--radius-md); padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); box-shadow: var(--clay-shadow);">
+                <div>
+                    <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">Medical Representative (MR)</h5>
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>Bhopal, MP | 1-3 Yrs Exp</span>
+                </div>
+                <a href="#contact" class="category-card-btn" style="padding: 8px 18px; font-size: 11px; text-decoration: none;">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Contact Section -->
+    <section class="contact-section" id="contact">
+        <!-- Floating organic molecule -->
+        <svg class="floating-deco float-slow" style="top: 20%; left: 8%; width: 40px; height: 40px; stroke: var(--medical-blue); stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="var(--medical-blue)"/><circle cx="4" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="5" r="2" fill="var(--medical-blue)"/><circle cx="20" cy="19" r="2" fill="var(--medical-blue)"/><line x1="12" y1="12" x2="4" y2="5" /><line x1="12" y1="12" x2="20" y2="5" /><line x1="12" y1="12" x2="20" y2="19" /></svg>
+
+        <div class="contact-container">
+            <!-- Left Column: Details & Image -->
+            <div class="contact-info-column reveal stagger-1">
+                <span class="hero-subtitle">Establish Alliances</span>
+                <h3>Global <span class="highlight-serif-italic">Reach</span></h3>
+                <p style="margin-bottom: 20px;">We supply wholesale clients, healthcare systems, and regional distributors worldwide. Connect with our export sales desk today.</p>
+                
+                <div class="contact-image-wrapper" style="border-radius: var(--radius-lg); overflow: hidden; height: 180px; box-shadow: var(--clay-shadow); border: 1px solid var(--lupin-border); margin-bottom: 25px;">
+                    <img src="contact_visual.jpg" alt="Futuristic Pharmaceutical Research" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+                </div>
+
+                <div class="contact-details-list" style="margin: 0; display: flex; flex-direction: column; gap: 20px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div class="contact-detail-icon" style="color: var(--medical-blue); font-size: 20px; width: 30px;"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">Corporate Office</h5>
+                            <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Indore, Madhya Pradesh, India</p>
+                            <a href="https://maps.google.com" target="_blank" style="font-size: 12px; color: var(--medical-blue); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 4px;">View on Google Map <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 9px; margin-left: 2px;"></i></a>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div class="contact-detail-icon" style="color: var(--medical-blue); font-size: 20px; width: 30px;"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">Email Desk</h5>
+                            <p style="font-size: 13px; color: var(--text-muted); margin: 0;"><a href="mailto:yati_pharma@yahoo.com" style="color: inherit; text-decoration: none;">yati_pharma@yahoo.com</a></p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div class="contact-detail-icon" style="color: var(--medical-blue); font-size: 20px; width: 30px;"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h5 style="font-size: 15px; font-weight: 700; color: var(--primary-navy); margin: 0 0 4px 0;">Hotline Number</h5>
+                            <p style="font-size: 13px; color: var(--text-muted); margin: 0;"><a href="tel:+919012942456" style="color: inherit; text-decoration: none;">+91 9012942456</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Inquiry Form -->
+            <div class="contact-form-column reveal">
+                <span class="hero-subtitle">Partner With Yati Pharmaceutical</span>
+                <h3>Business <span class="highlight-serif-italic">Inquiry</span></h3>
+                <p>Have wholesale order requests, licensing questions, or distribution partnership proposals? Message our trade relations team.</p>
+                
+                <form class="contact-form" id="contact-inquiry-form" onsubmit="handleInquirySubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="form-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message" rows="4" placeholder="Your Message / Inquiry Detail" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn cta-primary" style="align-self: flex-start; border: none; width: 100%;">Partner With Yati Pharmaceutical</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal Overlay -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-btn" onclick="closeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Dark Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <div class="logo-brand">
+                        <span class="logo-main" style="font-size: 28px;">Yati<span class="logo-dot">.</span></span>
+                        <span class="logo-sub" style="font-size: 8px;">Premium Pharmaceuticals</span>
+                    </div>
+                </div>
+                <p>An innovation-led global pharmaceutical company dedicated to pioneering high-quality Allopathic and Ayurvedic healthcare solutions for patients worldwide.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">The Yati Story</a></li>
+                        <li><a href="#products">Our Business</a></li>
+                        <li><a href="#manufacturing">Manufacturing Approach</a></li>
+                        <li><a href="#research">Our Science</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:yati_pharma@yahoo.com"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i>yati_pharma@yahoo.com</a></li>
+                        <li><a href="tel:+919012942456"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>+91 9012942456</a></li>
+                        <li><span style="font-size: 14px; color: var(--text-muted);"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>Indore, Madhya Pradesh</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Yati Pharmaceutical Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-overlay-close-btn" id="search-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+                <input type="text" id="search-input" placeholder="Search formulations, ingredients, or dosage..." autocomplete="off">
+            </div>
+            <div class="search-results-wrapper" id="search-results-wrapper">
+                <div class="search-no-query">Type to search YATI products (e.g. Setyflam, Collinzyme, Multivitamin...)</div>
+                <div class="search-results-grid" id="search-results-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Menu Dialog -->
+    <div class="mega-menu" id="mega-menu">
+        <div class="mega-menu-inner">
+            <div class="mega-menu-top">
+                <div class="mega-menu-logo">
+                    <span class="logo-main">Yati<span class="logo-dot">.</span></span>
+                </div>
+                <button class="mega-close-btn" id="mega-close" aria-label="Close menu" type="button">
+                    <span class="mega-close-text">Close</span>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mega-menu-content">
+                <!-- Column 1: Main Navigation Links -->
+                <div class="mega-col mega-col-main" style="border-right: none; padding-right: 0; align-items: center; gap: 30px; width: 100%;">
+                    <a href="#about" class="mega-main-link" onclick="closeModalAndScroll('#about')">About Us</a>
+                    <a href="#products" class="mega-main-link" onclick="closeModalAndScroll('#products')">Products Range</a>
+                    <a href="#manufacturing" class="mega-main-link" onclick="closeModalAndScroll('#manufacturing')">WHO-GMP Facility</a>
+                    <a href="#research" class="mega-main-link" onclick="closeModalAndScroll('#research')">R&amp;D Labs</a>
+                    <a href="#careers" class="mega-main-link" onclick="closeModalAndScroll('#careers')">Careers</a>
+                    <a href="#gallery" class="mega-main-link" onclick="closeModalAndScroll('#gallery')">Business Gallery</a>
+                    <a href="#contact" class="mega-main-link" onclick="closeModalAndScroll('#contact')">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close gallery" type="button">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous image" type="button">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="lightbox-content">
+            <div class="lightbox-img-wrapper">
+                <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery Image Preview">
+            </div>
+            <div class="lightbox-caption">
+                <div class="lightbox-caption-tag" id="lightbox-tag">Manufacturing</div>
+                <div class="lightbox-caption-title" id="lightbox-title">Automated API Synthesis Platform</div>
+            </div>
+        </div>
+        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next image" type="button">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top-btn" id="back-to-top" aria-label="Back to top" type="button">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- GSAP Animation Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Custom JS Logic -->
+    <script src="app.js?v=1.4"></script>
+    <!-- GSAP Interactions & Scroll Animations -->
+    <script src="gsap-init.js?v=1.4"></script>
+</body>
+</html>
