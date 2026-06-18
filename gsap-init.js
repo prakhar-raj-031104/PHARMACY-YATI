@@ -434,9 +434,38 @@
         });
     }
 
+    /* ----------------------------------------------------------
+       10. Infinite marquee strip (seamless loop)
+    ---------------------------------------------------------- */
+    function initMarquee() {
+        var track = document.querySelector(".marquee-track");
+        if (!track) return;
+        track.innerHTML += track.innerHTML;            // duplicate for seamless wrap
+        if (prefersReduced) return;
+        gsap.to(track, { xPercent: -50, duration: 26, ease: "none", repeat: -1 });
+    }
+
+    /* ----------------------------------------------------------
+       11. Masked clip reveal for section headings (agency style)
+    ---------------------------------------------------------- */
+    function initHeadingReveals() {
+        if (prefersReduced || !window.ScrollTrigger) return;
+        gsap.utils.toArray("h3.reveal").forEach(function (h) {
+            h.dataset.gsapBatch = "1";                 // let generic reveal skip it
+            gsap.set(h, { clipPath: "inset(110% 0 0 0)", y: 28, autoAlpha: 1 });
+            gsap.to(h, {
+                clipPath: "inset(-12% 0 0 0)", y: 0,
+                duration: 1.25, ease: "expo.out",
+                scrollTrigger: { trigger: h, start: "top 90%", once: true }
+            });
+        });
+    }
+
     function init() {
         initSmoothScroll();
         initCardBatches();   // flag grid cards first so reveals skip them
+        initHeadingReveals();
+        initMarquee();
         initScrollReveals();
         initParallax();
         initAboutCardsMotion();

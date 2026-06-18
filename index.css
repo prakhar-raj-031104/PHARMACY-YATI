@@ -4720,3 +4720,93 @@ html.lenis * { scroll-behavior: auto !important; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+/* ============================================================
+   AGENCY THEME LAYER — wibify-inspired (navy + white kept)
+   Oversized tight headings · marquee · refined rhythm
+   ============================================================ */
+
+/* --- Display typography: big, tight, confident --- */
+h3 {
+    font-size: clamp(36px, 5vw, 76px) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -0.025em !important;
+    font-weight: 700 !important;
+}
+.section-sub,
+.products-section .section-sub,
+.manufacturing-section .section-sub { font-size: clamp(16px, 1.3vw, 19px) !important; }
+
+/* Eyebrow / kicker labels */
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.26em !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    opacity: 0.92;
+}
+
+/* Hero headline — oversized */
+.hero-slide-title {
+    font-size: clamp(40px, 6.4vw, 92px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.03em !important;
+    font-weight: 700 !important;
+}
+.hero-slide-desc { font-size: clamp(15px, 1.15vw, 18px) !important; max-width: 560px; }
+
+/* Masked clip reveal initial guard (JS animates these) */
+h3.reveal { will-change: clip-path, transform; }
+
+/* --- Generous section rhythm --- */
+.about-section, .why-section, .products-section, .research-section,
+.quality-section, .global-section, .news-section, .testimonials-section,
+.gallery-section, .leadership-section, .our-business-section, .stack-section {
+    padding-top: clamp(90px, 11vh, 150px) !important;
+    padding-bottom: clamp(90px, 11vh, 150px) !important;
+}
+
+/* --- Cleaner pill buttons with subtle hover --- */
+.cta-btn, .category-card-btn {
+    border-radius: 999px !important;
+    letter-spacing: 0.04em !important;
+}
+.cta-primary {
+    background: #ffffff !important;
+    color: #08263F !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
+}
+.cta-primary:hover { background: var(--sky-blue) !important; color: #06263F !important; }
+
+/* --- Infinite marquee strip --- */
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: clamp(22px, 3vw, 40px) 0;
+    background: #061E33;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: clamp(36px, 4vw, 64px);
+    width: max-content;
+    will-change: transform;
+}
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(36px, 4vw, 64px);
+    white-space: nowrap;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: clamp(24px, 3.2vw, 46px);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.marquee-item .dot { color: var(--sky-blue); font-size: 0.7em; }
+
+/* --- Hairline section divider feel between light/dark --- */
+.testimonials-section, .products-section { border-top: 1px solid rgba(255,255,255,0.06); }
