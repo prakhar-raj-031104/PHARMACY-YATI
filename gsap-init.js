@@ -271,12 +271,15 @@
             }
 
             function travelDistance() {
-                return Math.max(0, track.scrollWidth - window.innerWidth + window.innerWidth * 0.22);
+                // Move exactly enough to bring the last card into view
+                // (accounting for the initial right-shift) plus a small margin.
+                return Math.max(0, track.scrollWidth - window.innerWidth + startOffset() + 48);
             }
 
             var scrollLength = function () {
-                // Longer scroll distance => slower, gentler sideways motion.
-                return "+=" + (travelDistance() * 1.7 + window.innerHeight);
+                // Keep scroll distance close to the actual travel so the
+                // section never feels "stuck"/pinned longer than it moves.
+                return "+=" + (travelDistance() + window.innerHeight * 0.15);
             };
 
             gsap.set(track, { x: startOffset });
@@ -305,7 +308,7 @@
                     start: "top top",
                     end: scrollLength,
                     pin: true,
-                    scrub: 1.2,
+                    scrub: 0.8,
                     anticipatePin: 1,
                     invalidateOnRefresh: true
                 }
