@@ -51,13 +51,11 @@
 
         var groups = [
             ".why-grid .why-card",
-            ".category-grid .category-card",
             ".certification-grid .cert-card",
             ".news-grid .news-card",
             ".research-cards-grid .research-info-card",
             ".feature-cards-grid .feature-spec-card",
             ".gallery-grid .gallery-item",
-            ".about-cards-grid .leaf-card-wrapper",
             ".executives-grid .executive-card"
         ];
 
@@ -194,7 +192,157 @@
     }
 
     /* ----------------------------------------------------------
-       7. Pinned stacked-card scroll showcase (swap on scroll)
+       6. About cards: roomy scroll-led entrance
+    ---------------------------------------------------------- */
+    function initAboutCardsMotion() {
+        var section = document.querySelector(".about-section");
+        var cards = gsap.utils.toArray(".about-cards-grid .leaf-card-wrapper");
+        if (!section || !cards.length || prefersReduced || !window.ScrollTrigger) return;
+
+        section.classList.add("about-motion-ready");
+        cards.forEach(function (card) { card.dataset.gsapBatch = "1"; });
+
+        gsap.set(cards, {
+            autoAlpha: 0,
+            x: 150,
+            y: 70,
+            scale: 0.9,
+            rotationY: -16,
+            transformPerspective: 1100,
+            transformOrigin: "center center"
+        });
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 72%",
+                end: "bottom 38%",
+                scrub: 0.75,
+                invalidateOnRefresh: true
+            }
+        });
+
+        tl.to(cards, {
+            autoAlpha: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotationY: 0,
+            duration: 1,
+            ease: "power4.out",
+            stagger: { each: 0.13, from: "start" },
+            overwrite: true
+        });
+
+        tl.to(cards, {
+            y: function (_, card) {
+                var index = cards.indexOf(card);
+                return (index - 1) * -22;
+            },
+            rotationZ: function (_, card) {
+                var index = cards.indexOf(card);
+                return (index - 1) * 0.7;
+            },
+            duration: 0.8,
+            ease: "none",
+            stagger: 0.04
+        }, 0.45);
+    }
+
+    /* ----------------------------------------------------------
+       7. Products: horizontal right-to-left scroll showcase
+    ---------------------------------------------------------- */
+    function initProductHorizontalScroll() {
+        var section = document.querySelector(".products-section");
+        var track = document.querySelector(".products-section .category-grid");
+        var cards = gsap.utils.toArray(".products-section .category-card");
+        if (!section || !track || cards.length < 2 || prefersReduced || !window.ScrollTrigger) return;
+
+        track.dataset.gsapBatch = "1";
+        track.classList.add("reveal-visible");
+        cards.forEach(function (card) { card.dataset.gsapBatch = "1"; });
+
+        var mm = gsap.matchMedia();
+        mm.add("(min-width: 901px)", function () {
+            section.classList.add("ph-ready");
+
+            function startOffset() {
+                return Math.min(window.innerWidth * 0.18, 230);
+            }
+
+            function travelDistance() {
+                return Math.max(0, track.scrollWidth - window.innerWidth + window.innerWidth * 0.22);
+            }
+
+            var scrollLength = function () {
+                return "+=" + (travelDistance() + window.innerHeight * 0.5);
+            };
+
+            gsap.set(track, { x: startOffset });
+            gsap.set(cards, {
+                autoAlpha: 0.58,
+                y: 80,
+                scale: 0.92,
+                rotationY: -12,
+                transformPerspective: 1100,
+                transformOrigin: "center center"
+            });
+
+            gsap.to(cards, {
+                autoAlpha: 1,
+                y: 0,
+                scale: 1,
+                rotationY: 0,
+                duration: 1,
+                ease: "power4.out",
+                stagger: 0.08,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 78%",
+                    once: true
+                }
+            });
+
+            var horizontalTween = gsap.to(track, {
+                x: function () { return -travelDistance(); },
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: scrollLength,
+                    pin: true,
+                    scrub: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            cards.forEach(function (card, i) {
+                gsap.to(card, {
+                    y: i % 2 ? -34 : 34,
+                    rotationZ: i % 2 ? 0.65 : -0.65,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: scrollLength,
+                        scrub: true,
+                        invalidateOnRefresh: true
+                    }
+                });
+            });
+
+            return function () {
+                section.classList.remove("ph-ready");
+                horizontalTween.kill();
+                gsap.set(track, { clearProps: "transform" });
+                gsap.set(cards, { clearProps: "transform,opacity,visibility" });
+            };
+        });
+    }
+
+    /* ----------------------------------------------------------
+       8. Pinned stacked-card scroll showcase (swap on scroll)
     ---------------------------------------------------------- */
     function initStackCards() {
         var section = document.querySelector(".stack-section");
@@ -207,10 +355,15 @@
 
         cards.forEach(function (card, i) {
             gsap.set(card, {
-                zIndex: i,
-                yPercent: i === 0 ? 0 : 100,
+                zIndex: cards.length + i,
+                autoAlpha: i === 0 ? 1 : 0,
+                yPercent: i === 0 ? 0 : 118,
+                xPercent: i === 0 ? 0 : (i % 2 ? 7 : -7),
+                scale: i === 0 ? 1 : 0.92,
+                rotationZ: i === 0 ? 0 : (i % 2 ? 2 : -2),
+                filter: i === 0 ? "blur(0px)" : "blur(10px)",
                 transformPerspective: 1200,
-                transformOrigin: "center top"
+                transformOrigin: "center center"
             });
         });
 
@@ -218,17 +371,40 @@
             scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                end: function () { return "+=" + (window.innerHeight * (cards.length - 1)); },
+                end: function () { return "+=" + (window.innerHeight * (cards.length - 0.7)); },
                 pin: pin,
-                scrub: 0.6,
+                scrub: 0.75,
                 anticipatePin: 1,
                 invalidateOnRefresh: true
             }
         });
 
         for (var i = 1; i < cards.length; i++) {
-            tl.to(cards[i], { yPercent: 0, ease: "power2.inOut", duration: 1 }, i - 1);
-            tl.to(cards[i - 1], { scale: 0.9, yPercent: -5, opacity: 0.5, ease: "power2.inOut", duration: 1 }, i - 1);
+            tl.to(cards[i], {
+                autoAlpha: 1,
+                yPercent: 0,
+                xPercent: 0,
+                scale: 1,
+                rotationZ: 0,
+                filter: "blur(0px)",
+                ease: "power4.out",
+                duration: 0.95
+            }, i - 1 + 0.04);
+            tl.to(cards[i - 1], {
+                yPercent: -24,
+                xPercent: i % 2 ? -5 : 5,
+                scale: 0.84,
+                autoAlpha: 0,
+                rotationZ: i % 2 ? -1.2 : 1.2,
+                filter: "blur(7px)",
+                ease: "power3.inOut",
+                duration: 0.95
+            }, i - 1);
+            tl.fromTo(cards[i].querySelector(".stack-card-img img"),
+                { scale: 1.18 },
+                { scale: 1.02, ease: "power2.out", duration: 0.95 },
+                i - 1 + 0.04
+            );
         }
     }
 
@@ -273,8 +449,10 @@
 
     function init() {
         initCardBatches();   // flag grid cards first so reveals skip them
+        initProductHorizontalScroll();
         initScrollReveals();
         initParallax();
+        initAboutCardsMotion();
         initTiltCards();
         initMagneticButtons();
         initStackCards();
