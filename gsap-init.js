@@ -64,16 +64,26 @@
         groups.forEach(function (sel) {
             var items = gsap.utils.toArray(sel);
             if (!items.length) return;
-            items.forEach(function (it) { it.dataset.gsapBatch = "1"; });
-            gsap.set(items, { autoAlpha: 0, y: 40, scale: 0.97 });
+            items.forEach(function (it, idx) {
+                it.dataset.gsapBatch = "1";
+                // Alternate entry direction: odd columns sweep in from the right,
+                // even from the left, for a fashionable woven reveal.
+                gsap.set(it, {
+                    autoAlpha: 0,
+                    x: (idx % 2 === 0) ? -70 : 70,
+                    y: 60, scale: 0.9, rotationY: (idx % 2 === 0) ? -8 : 8,
+                    transformPerspective: 900, transformOrigin: "center"
+                });
+            });
             ScrollTrigger.batch(items, {
-                start: "top 90%",
+                start: "top 92%",
                 once: true,
                 onEnter: function (batch) {
                     gsap.to(batch, {
-                        autoAlpha: 1, y: 0, scale: 1,
-                        duration: 0.8, ease: "power3.out",
-                        stagger: 0.09, overwrite: true
+                        autoAlpha: 1, x: 0, y: 0, scale: 1, rotationY: 0,
+                        duration: 1.05, ease: "power4.out",
+                        stagger: { each: 0.11, from: "start" },
+                        overwrite: true
                     });
                 }
             });
@@ -183,12 +193,92 @@
         });
     }
 
+    /* ----------------------------------------------------------
+       7. Pinned stacked-card scroll showcase (swap on scroll)
+    ---------------------------------------------------------- */
+    function initStackCards() {
+        var section = document.querySelector(".stack-section");
+        var pin = document.querySelector(".stack-pin");
+        if (!section || !pin) return;
+        var cards = gsap.utils.toArray(".stack-card");
+        if (cards.length < 2 || prefersReduced || !window.ScrollTrigger) return;
+
+        section.classList.add("stack-ready");
+
+        cards.forEach(function (card, i) {
+            gsap.set(card, {
+                zIndex: i,
+                yPercent: i === 0 ? 0 : 100,
+                transformPerspective: 1200,
+                transformOrigin: "center top"
+            });
+        });
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: function () { return "+=" + (window.innerHeight * (cards.length - 1)); },
+                pin: pin,
+                scrub: 0.6,
+                anticipatePin: 1,
+                invalidateOnRefresh: true
+            }
+        });
+
+        for (var i = 1; i < cards.length; i++) {
+            tl.to(cards[i], { yPercent: 0, ease: "power2.inOut", duration: 1 }, i - 1);
+            tl.to(cards[i - 1], { scale: 0.9, yPercent: -5, opacity: 0.5, ease: "power2.inOut", duration: 1 }, i - 1);
+        }
+    }
+
+    /* ----------------------------------------------------------
+       8. Testimonials slider (auto-advancing + dots)
+    ---------------------------------------------------------- */
+    function initTestimonialSlider() {
+        var track = document.getElementById("testimonial-track");
+        var dotsWrap = document.getElementById("testimonial-dots");
+        if (!track || !dotsWrap) return;
+        var slides = track.children;
+        var total = slides.length;
+        if (!total) return;
+        var index = 0, timer = null;
+
+        for (var i = 0; i < total; i++) {
+            var dot = document.createElement("span");
+            dot.dataset.i = i;
+            if (i === 0) dot.className = "active";
+            dotsWrap.appendChild(dot);
+        }
+        var dots = dotsWrap.children;
+
+        function go(n) {
+            index = (n + total) % total;
+            track.style.transform = "translateX(-" + (index * 100) + "%)";
+            for (var d = 0; d < dots.length; d++) dots[d].classList.toggle("active", d === index);
+        }
+        function start() { timer = setInterval(function () { go(index + 1); }, 5500); }
+        function stop() { if (timer) clearInterval(timer); }
+
+        dotsWrap.addEventListener("click", function (e) {
+            if (e.target.dataset.i !== undefined) { go(+e.target.dataset.i); stop(); start(); }
+        });
+        var slider = document.getElementById("testimonial-slider");
+        if (slider) {
+            slider.addEventListener("mouseenter", stop);
+            slider.addEventListener("mouseleave", start);
+        }
+        start();
+    }
+
     function init() {
         initCardBatches();   // flag grid cards first so reveals skip them
         initScrollReveals();
         initParallax();
         initTiltCards();
         initMagneticButtons();
+        initStackCards();
+        initTestimonialSlider();
         if (window.ScrollTrigger) {
             window.addEventListener("load", function () { ScrollTrigger.refresh(); });
         }
