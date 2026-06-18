@@ -279,23 +279,15 @@
             };
 
             gsap.set(track, { x: startOffset });
-            gsap.set(cards, {
-                autoAlpha: 0.58,
-                y: 80,
-                scale: 0.92,
-                rotationY: -12,
-                transformPerspective: 1100,
-                transformOrigin: "center center"
-            });
 
+            // Simple, clean entry — a light fade-up, no 3D/drift extras.
+            gsap.set(cards, { autoAlpha: 0, y: 40 });
             gsap.to(cards, {
                 autoAlpha: 1,
                 y: 0,
-                scale: 1,
-                rotationY: 0,
-                duration: 1,
-                ease: "power4.out",
-                stagger: 0.08,
+                duration: 0.7,
+                ease: "power2.out",
+                stagger: 0.07,
                 scrollTrigger: {
                     trigger: section,
                     start: "top 78%",
@@ -303,6 +295,7 @@
                 }
             });
 
+            // Stepped right -> left roll: scroll reveals one card, snaps, then the next.
             var horizontalTween = gsap.to(track, {
                 x: function () { return -travelDistance(); },
                 ease: "none",
@@ -311,25 +304,15 @@
                     start: "top top",
                     end: scrollLength,
                     pin: true,
-                    scrub: true,
+                    scrub: 0.6,
+                    snap: {
+                        snapTo: 1 / (cards.length - 1),
+                        duration: { min: 0.2, max: 0.5 },
+                        ease: "power1.inOut"
+                    },
                     anticipatePin: 1,
                     invalidateOnRefresh: true
                 }
-            });
-
-            cards.forEach(function (card, i) {
-                gsap.to(card, {
-                    y: i % 2 ? -34 : 34,
-                    rotationZ: i % 2 ? 0.65 : -0.65,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: scrollLength,
-                        scrub: true,
-                        invalidateOnRefresh: true
-                    }
-                });
             });
 
             return function () {
@@ -353,58 +336,29 @@
 
         section.classList.add("stack-ready");
 
+        // Simple & clean: each next card waits below, then rises OVER the stack.
+        // Previous cards stay put underneath (never removed).
         cards.forEach(function (card, i) {
             gsap.set(card, {
-                zIndex: cards.length + i,
-                autoAlpha: i === 0 ? 1 : 0,
-                yPercent: i === 0 ? 0 : 118,
-                xPercent: i === 0 ? 0 : (i % 2 ? 7 : -7),
-                scale: i === 0 ? 1 : 0.92,
-                rotationZ: i === 0 ? 0 : (i % 2 ? 2 : -2),
-                filter: i === 0 ? "blur(0px)" : "blur(10px)",
-                transformPerspective: 1200,
-                transformOrigin: "center center"
+                zIndex: i,                       // later cards stack on top
+                yPercent: i === 0 ? 0 : 100      // start just below the viewport
             });
         });
 
         var tl = gsap.timeline({
             scrollTrigger: {
-                trigger: section,
+                trigger: pin,                    // pin element is the trigger -> centers correctly
                 start: "top top",
-                end: function () { return "+=" + (window.innerHeight * (cards.length - 0.7)); },
+                end: function () { return "+=" + (window.innerHeight * (cards.length - 1) * 0.7); },
                 pin: pin,
-                scrub: 0.75,
+                scrub: 0.5,
                 anticipatePin: 1,
                 invalidateOnRefresh: true
             }
         });
 
         for (var i = 1; i < cards.length; i++) {
-            tl.to(cards[i], {
-                autoAlpha: 1,
-                yPercent: 0,
-                xPercent: 0,
-                scale: 1,
-                rotationZ: 0,
-                filter: "blur(0px)",
-                ease: "power4.out",
-                duration: 0.95
-            }, i - 1 + 0.04);
-            tl.to(cards[i - 1], {
-                yPercent: -24,
-                xPercent: i % 2 ? -5 : 5,
-                scale: 0.84,
-                autoAlpha: 0,
-                rotationZ: i % 2 ? -1.2 : 1.2,
-                filter: "blur(7px)",
-                ease: "power3.inOut",
-                duration: 0.95
-            }, i - 1);
-            tl.fromTo(cards[i].querySelector(".stack-card-img img"),
-                { scale: 1.18 },
-                { scale: 1.02, ease: "power2.out", duration: 0.95 },
-                i - 1 + 0.04
-            );
+            tl.to(cards[i], { yPercent: 0, ease: "power2.out", duration: 1 }, i - 1);
         }
     }
 
