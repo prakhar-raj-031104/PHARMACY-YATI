@@ -33,10 +33,10 @@
                 if (el.classList.contains("stagger-" + i)) { delay = i * 0.08; break; }
             }
             gsap.fromTo(el,
-                { autoAlpha: 0, y: 46 },
+                { autoAlpha: 0, y: 64 },
                 {
-                    autoAlpha: 1, y: 0, duration: 1, delay: delay,
-                    ease: "power3.out",
+                    autoAlpha: 1, y: 0, duration: 1.3, delay: delay,
+                    ease: "expo.out",
                     scrollTrigger: { trigger: el, start: "top 88%", once: true }
                 }
             );
@@ -275,7 +275,8 @@
             }
 
             var scrollLength = function () {
-                return "+=" + (travelDistance() + window.innerHeight * 0.5);
+                // Longer scroll distance => slower, gentler sideways motion.
+                return "+=" + (travelDistance() * 1.7 + window.innerHeight);
             };
 
             gsap.set(track, { x: startOffset });
@@ -295,7 +296,7 @@
                 }
             });
 
-            // Stepped right -> left roll: scroll reveals one card, snaps, then the next.
+            // Slow, smooth, continuous right -> left roll tied to scroll (no snapping).
             var horizontalTween = gsap.to(track, {
                 x: function () { return -travelDistance(); },
                 ease: "none",
@@ -304,12 +305,7 @@
                     start: "top top",
                     end: scrollLength,
                     pin: true,
-                    scrub: 0.6,
-                    snap: {
-                        snapTo: 1 / (cards.length - 1),
-                        duration: { min: 0.2, max: 0.5 },
-                        ease: "power1.inOut"
-                    },
+                    scrub: 1.2,
                     anticipatePin: 1,
                     invalidateOnRefresh: true
                 }
@@ -401,7 +397,41 @@
         start();
     }
 
+    /* ----------------------------------------------------------
+       9. Smooth inertia scrolling (Lenis) — agency-style feel,
+          synced with ScrollTrigger and in-page anchor links.
+    ---------------------------------------------------------- */
+    function initSmoothScroll() {
+        if (prefersReduced || typeof window.Lenis === "undefined") return;
+
+        var lenis = new Lenis({
+            duration: 1.15,
+            smoothWheel: true,
+            easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }
+        });
+        window.__lenis = lenis;
+
+        if (window.ScrollTrigger) {
+            lenis.on("scroll", ScrollTrigger.update);
+        }
+        gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // Route in-page anchor links through Lenis for a smooth glide.
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                var id = link.getAttribute("href");
+                if (!id || id === "#") return;
+                var target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                lenis.scrollTo(target, { offset: -72, duration: 1.2 });
+            });
+        });
+    }
+
     function init() {
+        initSmoothScroll();
         initCardBatches();   // flag grid cards first so reveals skip them
         initProductHorizontalScroll();
         initScrollReveals();
