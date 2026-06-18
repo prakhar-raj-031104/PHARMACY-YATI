@@ -51,6 +51,7 @@
 
         var groups = [
             ".why-grid .why-card",
+            ".category-grid .category-card",
             ".certification-grid .cert-card",
             ".news-grid .news-card",
             ".research-cards-grid .research-info-card",
@@ -436,7 +437,6 @@
     function init() {
         initSmoothScroll();
         initCardBatches();   // flag grid cards first so reveals skip them
-        initProductHorizontalScroll();
         initScrollReveals();
         initParallax();
         initAboutCardsMotion();
